@@ -5,3 +5,4 @@ new_project="0-new_project"
 mkdir "$new_project"
 cd "$new_project"
 dotnet new console
+dotnet build

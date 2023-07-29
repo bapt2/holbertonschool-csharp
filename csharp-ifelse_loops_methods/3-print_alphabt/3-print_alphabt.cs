@@ -3,13 +3,13 @@
 class Program
 {
     static void Main(string[] args)
-    {
-        for(int i = 0; i < 26; i++)
         {
-            if (i != 6 && i != 17)
+            string abc = "";
+            for (char letter = 'a'; letter <= 'z'; letter++)
             {
-                Console.Write(Convert.ToChar(i + (int)'a'));
+                if (letter != 'e' && letter != 'q')
+                    abc += letter;
             }
+            Console.Write(abc);
         }
-    }
 }

@@ -10,14 +10,15 @@
                 Console.WriteLine("Size cannot be negative");
                 return null;
             }
-            int[] Array = new int[size];
+            int[] array = new int[size];
             if (size == 0)
             {
                 Console.WriteLine();
-                return Array;
+                return array;
             }
             for (int i = 0; i < size; i++)
             {
+                array[i] = i;
                 if (i != size - 1)
                 {
                     Console.Write("{0} ", i);
@@ -27,7 +28,6 @@
                     Console.Write(i);
                 }
             }
-
-            return Array;
+            return array;
         }
     }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
     {
         public static List<int> DeleteAt(List<int> myList, int index)
         {
-            if (index < 0 || index < myList.Count)
+            if (index < 0 || index < myList.Count - 1)
             {
                 Console.WriteLine("Index is out of range");
                 return myList;

@@ -15,6 +15,7 @@ using System.Collections.Generic;
                 listInt.Add(i);
                 Console.Write("{0} ", i);
             }
+            Console.WriteLine();
             return listInt;
         }
     }

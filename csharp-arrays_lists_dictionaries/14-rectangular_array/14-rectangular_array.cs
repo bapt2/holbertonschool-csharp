@@ -5,24 +5,15 @@
     {
         static void Main(string[] args)
         {
-            int[,] square = new int[5,5];
-            for (int i = 0; i < square.Length; i++)
+            int[,] square = new int[5, 5] {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}};
+            square[2, 2] = 1;
+            for (int i = 0; i < square.GetLength(0); i++)
             {
-                if (i == 5 || i == 10 || i == 15 || i == 20 || i == 25)
+                for (int j = 0; j < square.GetLength(1); j++)
                 {
-                    Console.WriteLine();
+                    Console.Write(square.GetValue(i, j));
                 }
-                if (i == 12)
-                {
-                Console.Write("1");
-                }
-                else
-                {
-                Console.Write("0");
-                }
+                Console.WriteLine();
             }
-            Console.WriteLine();
-
         }
     }
-

@@ -11,7 +11,14 @@
             {
                 for (int j = 0; j < square.GetLength(1); j++)
                 {
-                    Console.Write(square.GetValue(i, j));
+                    if (j == square.GetLength(1))
+                    {
+                        Console.Write(square.GetValue(i, j));
+                    }
+                    else 
+                    {
+                        Console.Write("{0} ", square.GetValue(i, j));
+                    }
                 }
                 Console.WriteLine();
             }

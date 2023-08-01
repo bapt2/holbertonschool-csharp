@@ -25,7 +25,7 @@
                 }
                 else 
                 {
-                    Console.Write(i);
+                    Console.Write("{0}\n", i);
                 }
             }
             return array;

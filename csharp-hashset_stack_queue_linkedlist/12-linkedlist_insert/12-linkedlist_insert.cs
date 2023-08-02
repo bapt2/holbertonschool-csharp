@@ -13,6 +13,11 @@ class LList
                 myLList.AddBefore(current, n);
                 return current;
             }
+            if (current.Next == null)
+            {
+                myLList.AddAfter(current, n);
+                return current;
+            }
             else
             {
                 current = current.Next;

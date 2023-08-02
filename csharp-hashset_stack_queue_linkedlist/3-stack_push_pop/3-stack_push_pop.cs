@@ -37,6 +37,10 @@ class MyStack
                 }
             }
         }
+        else
+        {
+            Console.WriteLine("Stack contains \"{0}\": {1}", search, isPresent);
+        }
         aStack.Push(newItem);
         return aStack;
     }

@@ -16,8 +16,8 @@ class MyStack
             count += 1;
             if (i == aStack.Count - 1)
             {
-                Console.WriteLine("Number of items: {0}", count);
-                Console.WriteLine("Top items: {0}", aStack.Peek());
+                Console.WriteLine("Number of item: {0}", count);
+                Console.WriteLine("Top item: {0}", aStack.Peek());
             }
         }
         if (aStack.Contains(search))

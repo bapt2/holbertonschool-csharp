@@ -11,8 +11,6 @@ class MyStack
         {
             Console.WriteLine("Number of items: {0}", count);
             Console.WriteLine("Stack is empty");
-            Console.WriteLine("Stack contains \"{0}\": {1}", search, isPresent);
-
         }
         for (int i = 0; i < aStack.Count; i++)
         {

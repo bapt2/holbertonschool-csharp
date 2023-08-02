@@ -8,11 +8,15 @@ class LList
         LinkedListNode<int> current = myLList.First;
         for (int i = 0; current != null; i++)
         {
-            current = current.Next;
-            if (i == n -1)
+            if (n < i)
+            {
+                return 0;
+            }
+            if (i == n)
             {
                 return current.Value;
             }
+            current = current.Next;
         }
         return 0;
     }

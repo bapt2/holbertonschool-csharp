@@ -11,7 +11,10 @@ class MyQueue
         {
             Console.WriteLine("Queue is empty");
         }
+        else
+        {
         Console.WriteLine("First item: {0}", aQueue.Peek());
+        }
         if (aQueue.Contains(search))
         {
             Console.WriteLine("Queue contains \"{0}\": {1}", search, aQueue.Contains(search));

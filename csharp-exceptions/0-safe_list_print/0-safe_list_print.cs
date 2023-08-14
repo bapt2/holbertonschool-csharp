@@ -10,8 +10,8 @@ class List
         {
             try
             {
-                count += 1;
                 Console.WriteLine(myList[i]);
+                count += 1;
             }
             catch (Exception)
             {

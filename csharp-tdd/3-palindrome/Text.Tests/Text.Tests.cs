@@ -23,5 +23,23 @@ namespace Text.Tests
             string s = "empty";
             Assert.AreEqual(Text.Str.IsPalindrome(s), false);
         }
+        [Test]
+        public void Spaces()
+        {
+            string s = "lev el ";
+            Assert.AreEqual(Text.Str.IsPalindrome(s), true);
+        }
+        [Test]
+        public void Punctuation()
+        {
+            string s = "A man, a plan, a canal: Panama.";
+            Assert.AreEqual(Text.Str.IsPalindrome(s), true);
+        }
+        [Test]
+        public void UpperAndLower()
+        {
+            string s = "Level";
+            Assert.AreEqual(Text.Str.IsPalindrome(s), true);
+        }
     }
 }

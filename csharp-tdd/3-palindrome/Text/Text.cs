@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Text
 {
@@ -17,10 +19,12 @@ namespace Text
             {
                 return true;
             }
-            char[] reverse = s.ToCharArray();
-            Array.Reverse(reverse);
-            string reverseStr = new string(reverse);
-            if (reverseStr == s)
+            s = Regex.Replace(s, @"[^\w\d]", "");
+            string reverse = string.Join("", s.Reverse());
+            Console.WriteLine(s);
+            Console.WriteLine(reverse);
+
+            if (reverse.ToLower() == s.ToLower())
             {
                 return true;
             }

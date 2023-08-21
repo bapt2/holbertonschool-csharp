@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collection;
+using System.Collections.Generic;
 
 namespace MyMath
 {
@@ -9,11 +9,11 @@ namespace MyMath
     public class Operations
     {
         /// <summary>
-        /// public static int Max(List<int> nums)
+        /// public static int Max
         /// </summary>
         public static int Max(List<int> nums)
         {
-            if (nums.Count == null)
+            if (nums.Count == 0)
             {
                 return 0;
             }

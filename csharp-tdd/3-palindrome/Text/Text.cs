@@ -21,8 +21,6 @@ namespace Text
             }
             s = Regex.Replace(s, @"[^\w\d]", "");
             string reverse = string.Join("", s.Reverse());
-            Console.WriteLine(s);
-            Console.WriteLine(reverse);
 
             if (reverse.ToLower() == s.ToLower())
             {

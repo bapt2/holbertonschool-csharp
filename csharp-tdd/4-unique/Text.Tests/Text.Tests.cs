@@ -11,6 +11,18 @@ namespace Text.Tests
             Assert.AreEqual(Text.Str.UniqueChar(s), 1);
         }
         [Test]
+        public void UniqueCharacterFirst()
+        {
+            string s = "teess";
+            Assert.AreEqual(Text.Str.UniqueChar(s), 0);
+        }
+        [Test]
+        public void UniqueCharacterLast()
+        {
+            string s = "eesst";
+            Assert.AreEqual(Text.Str.UniqueChar(s), 4);
+        }
+        [Test]
         public void NonUniqueCharacter()
         {
             string s = "ttt";

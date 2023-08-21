@@ -12,9 +12,5 @@ namespace Enemies
         ///</summary>
         public int health = 0;
 
-        static void Enemies(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
     }
 }

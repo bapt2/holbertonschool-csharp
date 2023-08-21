@@ -8,7 +8,7 @@ namespace Enemies
     public class Zombie
     {
         int health;
-        string name = "(no name)";
+        string name = "(No name)";
         /// <summary>
         /// public string Name
         /// </summary>

@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 namespace MyMath.Tests
 {
@@ -15,11 +16,13 @@ namespace MyMath.Tests
             List<int> list2 = new List<int>() {3, 7, 15};
             Assert.AreEqual(MyMath.Operations.Max(list2), 15);
         }
+        [Test]
         public void FindMaxEmpty()
         {
             List<int> list = new List<int>() { };
             Assert.AreEqual(MyMath.Operations.Max(list), 0);
         }
+        [Test]
         public void FindMaxNegativ()
         {
             List<int> list = new List<int>() {-1, -2, -3, -4, -5};

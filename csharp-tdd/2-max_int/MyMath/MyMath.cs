@@ -13,7 +13,7 @@ namespace MyMath
         /// </summary>
         public static int Max(List<int> nums)
         {
-            if (nums.Count == 0)
+            if (nums.Count < 1)
             {
                 return 0;
             }

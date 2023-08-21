@@ -15,13 +15,13 @@ namespace MyMath.Tests
         public void DivisionBy0()
         {
             int[,] matrix = new int[,] { { 5, 4, 3 }, { 2, 1, 7 } };
-            Assert.AreEqual(MyMath.Matrix.Divide(matrix, 0), matrix);
+            Assert.AreEqual(MyMath.Matrix.Divide(matrix, 0), null);
         }
         [Test]
         public void MatrixNull()
         {
             int[,] matrix = null;
-            Assert.AreEqual(MyMath.Matrix.Divide(matrix, 0), matrix);
+            Assert.AreEqual(MyMath.Matrix.Divide(matrix, 0), null);
         }
     }
 }

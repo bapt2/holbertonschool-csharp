@@ -13,8 +13,8 @@ class Obj
     {
         Type t = myObj.GetType();
         TypeInfo tI = t.GetTypeInfo();
-        IEnumerable<PropertyInfo> pList = tI.DeclaredProperties;
-        IEnumerable<MethodInfo> mList = tI.DeclaredMethods;
+        IEnumerable<PropertyInfo> pList = tI.GetProperties();
+        IEnumerable<MethodInfo> mList = tI.GetMethods();
 
         Console.WriteLine("{0} Properties:", t.Name);
 

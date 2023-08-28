@@ -19,26 +19,26 @@ class Rectangle : Shape
 
     public int Width
     {
-        get => width
+        get => width;
         set
         {
-            if (width <= 0)
+            if (width < 0)
             {
-                throw new ArgumentException("Width must be greater than or equal to 0")
+                throw new ArgumentException("Width must be greater than or equal to 0");
             }
-            set = width
+            width = value;
         }
     }
     public int Height
     {
-        get => height
+        get => height;
         set
         {
-            if (width <= 0)
+            if (width < 0)
             {
-                throw new ArgumentException("Height must be greater than or equal to 0")
+                throw new ArgumentException("Height must be greater than or equal to 0");
             }
-            set = height
+            height = value;
         }
     }
 }

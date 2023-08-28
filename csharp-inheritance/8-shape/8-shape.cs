@@ -60,7 +60,7 @@ class Square : Rectangle
         get => size;
         set
         {
-            if (size < 0)
+            if (value < 0)
             {
                 throw new ArgumentException("Size must be greater than or equal to 0");
             }

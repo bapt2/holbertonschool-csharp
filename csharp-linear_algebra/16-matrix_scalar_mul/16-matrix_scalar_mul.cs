@@ -8,7 +8,7 @@ class MatrixMath
     /// </summary>
     public static double[,] MultiplyScalar(double[,] matrix, double scalar)
     {
-        if (matrix.Length != 4 || matrix.Length != 9)
+        if (matrix.Length != 4 && matrix.Length != 9)
         {
             double[,] error = new double[,] { { -1 } };
             return error;

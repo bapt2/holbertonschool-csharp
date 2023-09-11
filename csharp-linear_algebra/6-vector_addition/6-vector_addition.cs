@@ -9,7 +9,7 @@ class VectorMath
     {
         double[] result = new double[vector1.Length];
 
-        if (vector1.Length < 2 || vector1.Length > 3 || vector2.Length < 2 || vector2.Length > 3)
+        if (vector1.Length < 2 || vector1.Length > 3 || vector2.Length < 2 || vector2.Length > 3 || vector1.Length != vector2.Length)
         {
             double[] error = new double[] {-1};
             return error;

@@ -2,6 +2,9 @@
 
 class MatrixMath
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static double[,] Multiply(double[,] matrix1, double[,] matrix2)
     {
         if (matrix1.Length == 0 || matrix2.Length == 0)

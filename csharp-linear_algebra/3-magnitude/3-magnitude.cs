@@ -3,6 +3,9 @@
 
 class VectorMath
 {
+    /// <summary>
+    /// public static double Magnitude
+    /// </summary>
     public static double Magnitude(double[] vector)
     {
         double result = 0;

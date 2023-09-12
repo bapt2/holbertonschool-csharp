@@ -1,26 +1,36 @@
 ﻿using System;
 
-    class MatrixMath
+class MatrixMath
+{
+    /// <summary>
+    /// public static double[,] Rotate2D
+    /// </summary>
+    public static double[,] Rotate2D(double[,] matrix, double angle)
     {
-        /// <summary>
-        /// public static double[,] Rotate2D
-        /// </summary>
-        public static double[,] Rotate2D(double[,] matrix, double angle)
+        double[,] error = { { -1 } };
+        if (matrix.Length == 0 || matrix.GetLength(0) != 2 || matrix.GetLength(1) != 2)
         {
-            double[,] error = {{ -1 }};
-            if (matrix.Length == 0)
-            {
-                return error;
-            }
+            return error;
+        }
 
-            double[,] result = new double[matrix.GetLength(0), matrix.GetLength(1)]
-            for (int i = 0; i < matrix.GetLength(0); i++)
+        double[,] result = new double[2, 2];
+        double[,] rotateMatrix = new double[2, 2] {
+            {Math.Cos(angle), Math.Sin(angle)},
+            {-Math.Sin(angle), Math.Cos(angle)}
+        };
+
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+
+            for (int j = 0; j < matrix.GetLength(1); j++)
             {
-                for (int j = 0; j < matrix.GetLength(1); j++)
+                result[i, j] = 0;
+                for (int k = 0; k < matrix.GetLength(0); k++)
                 {
-                    result[i, j] = matrix[i, j] * angle;
+                    result[i, j] += Math.Round(matrix[i, k] * rotateMatrix[k, j], 2);
                 }
             }
-            return result;
         }
+        return result;
     }
+}

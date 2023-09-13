@@ -14,22 +14,19 @@ class MatrixMath
             return error;
         }
         double[,] result = new double[2, 2];
+        double[,] copy = matrix;
+
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            for (int j = 0; j < matrix.GetLength(1); j++)
+            if (direction == 'x')
             {
-                result[i, j] = 0;
-                for (int k = 0; k < matrix.GetLength(0); k++)
-                {
-                    if (direction == 'x')
-                    {
-                        result[i, j] = matrix[i, k] + (factor * matrix[k, j]);
-                    }
-                    else
-                    {
-                        result[i, j] = matrix[k, j] + (factor * matrix[i, k]);
-                    }
-                }
+                result[i, 0] = matrix[i, 0] + (factor * matrix[i, 1]);
+                result[i, 1] = matrix[i, 1];
+            }
+            else
+            {
+                result[i, 1] = matrix[i, 1] + (factor * matrix[i, 0]);
+                result[i, 0] = matrix[i, 0];
             }
         }
         return result;

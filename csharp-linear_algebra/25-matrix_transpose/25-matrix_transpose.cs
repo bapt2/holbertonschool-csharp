@@ -10,7 +10,7 @@ class MatrixMath
     {
         if (matrix.GetLength(0) == 0)
         {
-            return new double[,] error = {{}};
+            return new double[0, 0];
         }
 
         double[,] result = new double[matrix.GetLength(0), matrix.GetLength(1)];

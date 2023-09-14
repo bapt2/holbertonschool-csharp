@@ -14,16 +14,11 @@ class MatrixMath
         }
         double result = 0;
 
-        for (int i = 0; i < matrix.GetLength(0); i++)
+        for (int i = 0; i < matrix.GetLength(1); i++)
         {
-            for (int j = 0; j < matrix.GetLength(1); j++)
+            if (matrix.Length == 4)
             {
-                if (direction == matrix.Length == 4)
-                {
-                    result = (matrix[i, 0] * matrix[j, 0]) - (matrix[i, 1] * matrix[j, 1]);
-                    result[i, 1] = matrix[i, 1];
-                }
-
+                result = (matrix[0, 0] * matrix[1, 1]) - (matrix[0, 1] * matrix[1, 0]);
             }
         }
         return result;

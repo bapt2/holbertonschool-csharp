@@ -26,14 +26,8 @@ class MatrixMath
             else
             {
                 first = (matrix[0, 0]) * ((matrix[1, 1] * matrix[2, 2]) - (matrix[1, 2]) * matrix[2, 1]);
-                Console.WriteLine(first);
-
                 second = (matrix[0, 1]) * ((matrix[1, 0] * matrix[2, 2]) - (matrix[1, 2]) * matrix[2, 0]);
-                Console.WriteLine(second);
-
                 third = (matrix[0, 2]) * ((matrix[1, 0] * matrix[2, 1]) - (matrix[1, 1]) * matrix[2, 0]);
-                Console.WriteLine(third);
-
                 result = Math.Round(first - second + third, 2);
             }
         }

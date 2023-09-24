@@ -59,7 +59,7 @@ class ImageProcessor
     {
         Parallel.ForEach(filenames, filename =>
         {
-            string newfilename = Path.GetFileNameWithoutExtension(filename) + "_inverse.jpg";
+            string newfilename = Path.GetFileNameWithoutExtension(filename) + "_grayscale.jpg";
             // lire l'image
             Bitmap bmp = new Bitmap(filename);
 

@@ -57,7 +57,29 @@ class ImageProcessor
     /// <param name="filenames"></param>
     public static void Grayscale(string[] filenames)
     {
+        Parallel.ForEach(filenames, filename =>
+        {
+            string newfilename = Path.GetFileNameWithoutExtension(filename) + "_inverse.jpg";
+            // lire l'image
+            Bitmap bmp = new Bitmap(filename);
 
+            // prendre la dimension de l'image 
+            int width = bmp.Width;
+            int height = bmp.Height;
+
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    // récuperer la valeur de chaque pixel
+                    Color p = bmp.GetPixel(x, y);
+
+                    bmp.SetPixel(x, y, Color.FromArgb(p.R, 0, 0));
+                }
+            }
+
+            bmp.Save(newfilename);
+        });
     }
 
     /// <summary>

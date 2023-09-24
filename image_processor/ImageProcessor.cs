@@ -20,10 +20,8 @@ class ImageProcessor
         Parallel.ForEach(filenames, filename =>
         {
             string newfilename = Path.GetFileNameWithoutExtension(filename) + "_inverse.jpg";
-            // lire l'image
             Bitmap bmp = new Bitmap(filename);
 
-            // prendre la dimension de l'image 
             int width = bmp.Width;
             int height = bmp.Height;
 
@@ -31,7 +29,6 @@ class ImageProcessor
             {
                 for (int x = 0; x < width; x++)
                 {
-                    // récuperer la valeur de chaque pixel
                     Color p = bmp.GetPixel(x, y);
 
                     int a = p.A;
@@ -60,10 +57,8 @@ class ImageProcessor
         Parallel.ForEach(filenames, filename =>
         {
             string newfilename = Path.GetFileNameWithoutExtension(filename) + "_grayscale.jpg";
-            // lire l'image
             Bitmap bmp = new Bitmap(filename);
 
-            // prendre la dimension de l'image 
             int width = bmp.Width;
             int height = bmp.Height;
 
@@ -71,7 +66,6 @@ class ImageProcessor
             {
                 for (int x = 0; x < width; x++)
                 {
-                    // récuperer la valeur de chaque pixel
                     Color p = bmp.GetPixel(x, y);
 
                     bmp.SetPixel(x, y, Color.FromArgb(p.R, 0, 0));
@@ -92,10 +86,8 @@ class ImageProcessor
         Parallel.ForEach(filenames, filename =>
         {
             string newfilename = Path.GetFileNameWithoutExtension(filename) + "_bw.jpg";
-            // lire l'image
             Bitmap bmp = new Bitmap(filename);
 
-            // prendre la dimension de l'image 
             int width = bmp.Width;
             int height = bmp.Height;
 
@@ -103,7 +95,6 @@ class ImageProcessor
             {
                 for (int x = 0; x < width; x++)
                 {
-                    // récuperer la valeur de chaque pixel
                     Color p = bmp.GetPixel(x, y);
                     if (p.GetBrightness() < threshold)
                     {
@@ -128,6 +119,19 @@ class ImageProcessor
     /// <param name="height"></param>
     public static void Thumbnail(string[] filenames, int height)
     {
+        Parallel.ForEach(filenames, filename =>
+        {
+            string newfilename = Path.GetFileNameWithoutExtension(filename) + "_th.jpg";
+            Bitmap bmp = new Bitmap(filename);
 
+            int oldwidth = bmp.Width;
+            int oldheight = bmp.Height;
+
+            int width = oldwidth / oldwidth * height;
+
+            Bitmap thumbnail = new Bitmap(bmp, new Size(width, height));
+
+            thumbnail.Save(newfilename);
+        });
     }
 }

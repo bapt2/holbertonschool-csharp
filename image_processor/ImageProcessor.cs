@@ -105,13 +105,13 @@ class ImageProcessor
                 {
                     // récuperer la valeur de chaque pixel
                     Color p = bmp.GetPixel(x, y);
-                    if (p.GetBrightness(bmp) < threshold)
+                    if (p.GetBrightness() < threshold)
                     {
-                        p = p.FromArgb(0, 0, 0);
+                        bmp.SetPixel(x, y, Color.FromArgb(0, 0, 0));
                     }
                     else
                     {
-                        p = p.FromArgb(255, 255, 255);
+                        bmp.SetPixel(x, y, Color.FromArgb(255, 255, 255));
                     }
                     
                 }

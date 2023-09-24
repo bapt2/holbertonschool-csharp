@@ -89,7 +89,36 @@ class ImageProcessor
     /// <param name="threshold"></param>
     public static void BlackWhite(string[] filenames, double threshold)
     {
+        Parallel.ForEach(filenames, filename =>
+        {
+            string newfilename = Path.GetFileNameWithoutExtension(filename) + "_bw.jpg";
+            // lire l'image
+            Bitmap bmp = new Bitmap(filename);
 
+            // prendre la dimension de l'image 
+            int width = bmp.Width;
+            int height = bmp.Height;
+
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    // récuperer la valeur de chaque pixel
+                    Color p = bmp.GetPixel(x, y);
+                    if (p.GetBrightness(bmp) < threshold)
+                    {
+                        p = p.FromArgb(0, 0, 0);
+                    }
+                    else
+                    {
+                        p = p.FromArgb(255, 255, 255);
+                    }
+                    
+                }
+            }
+
+            bmp.Save(newfilename);
+        });
     }
 
     /// <summary>

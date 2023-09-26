@@ -64,7 +64,8 @@ class ImageProcessor
                 {
                     Color p = bmp.GetPixel(x, y);
 
-                    bmp.SetPixel(x, y, Color.FromArgb(p.R, 0, 0));
+                    int gray = (p.R + p.G + p.B) / 3;
+                    bmp.SetPixel(x, y, Color.FromArgb(gray, gray, gray));
                 }
             }
 

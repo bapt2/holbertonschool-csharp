@@ -1,6 +1,6 @@
 ﻿using System;
 
-abstract class Base
+public abstract class Base
 {
     public string name {get; set;}
 
@@ -19,36 +19,44 @@ public interface IInteractive
     /// <summary>
     /// public void Interact
     /// </summary>
-    public void Interact()
-    {
-
-    }
+    void Interact();
 }
 
 public interface IBreakable
 {
-    public int durability {get; set;}
+     int durability {get; set;}
 
     /// <summary>
     /// public void Break
     /// </summary>
-    public void Break()
-    {
-
-    }
+    void Break();
 }
 
 public interface ICollectable
 {
-    public bool isCollected {get; set;}
+     bool isCollected {get; set;}
 
-    public void Collect()
-    {
-
-    }
+    void Collect();
 }
 
 public class TestObject: Base, IInteractive, IBreakable, ICollectable
 {
-    
+    public int durability {get; set;}
+    public bool isCollected {get; set;}
+
+
+    public void Interact()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Break()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Collect()
+    {
+        throw new NotImplementedException();
+    }
 }

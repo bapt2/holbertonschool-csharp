@@ -65,7 +65,7 @@ class Queue<T>
         }
         else
         {
-            
+            tail.value = head.value;
             head = head.next;
             count -= 1;
             return tail.value;

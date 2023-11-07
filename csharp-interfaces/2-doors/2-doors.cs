@@ -78,7 +78,6 @@ public class Door: Base, IInteractive
         this.name = name;
     }
 
-
     /// <summary>
     /// public void Interact
     /// </summary>

@@ -73,7 +73,7 @@ public class Door: Base, IInteractive
     /// public Door
     /// </summary>
     /// <param name="name"></param>
-    public Door(string name = "door")
+    public Door(string name = "Door")
     {
         this.name = name;
     }

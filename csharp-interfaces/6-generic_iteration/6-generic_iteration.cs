@@ -209,7 +209,7 @@ public class Key: Base, ICollectable
 }
 
 /// <summary>
-/// public class RoomObjects
+/// public class Objs
 /// </summary>
 public class Objs<T>: IEnumerable<T>
 {
@@ -230,7 +230,7 @@ public class Objs<T>: IEnumerable<T>
     }
 
     /// <summary>
-    /// public IEnumerator<T> GetEnumerator
+    /// public IEnumerator GetEnumerator
     /// </summary>
     /// <returns></returns>
     public IEnumerator<T> GetEnumerator()

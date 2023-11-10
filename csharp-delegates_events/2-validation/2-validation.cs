@@ -47,7 +47,14 @@ public class Player
             Console.WriteLine("{0} takes 0 damage!", name);
             return;
         }
-        ValidateHP(hp - damage);
+        if (damage > hp)
+        {
+            hp = 0;
+        }
+        else
+        {
+            ValidateHP(hp - damage);
+        }
         Console.WriteLine("{0} takes {1} damage!", name, damage);
     }
 
@@ -68,7 +75,7 @@ public class Player
     /// <param name="newHp"></param>
     public void ValidateHP(float newHp)
     {
-        if (newHp < 0)
+        if (newHp < 0 )
         {
             newHp = 0;
         }

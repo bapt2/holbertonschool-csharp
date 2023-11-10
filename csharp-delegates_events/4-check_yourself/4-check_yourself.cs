@@ -47,6 +47,7 @@ public class Player
         if (damage <= 0)
         {
             Console.WriteLine("{0} takes 0 damage!", name);
+            ValidateHP(hp - damage);
             return;
         }
         Console.WriteLine("{0} takes {1} damage!", name, damage);
@@ -54,10 +55,7 @@ public class Player
         {
             hp = 0;
         }
-        else
-        {
-            ValidateHP(hp - damage);
-        }
+        ValidateHP(hp - damage);
     }
 
     /// <summary> public void HealDamage </summary>
@@ -79,7 +77,7 @@ public class Player
     {
         if (newHp <= 0 )
         {
-            newHp = 0;
+            hp = 0;
         }
         else if (newHp > maxHp)
         {
@@ -135,7 +133,7 @@ public class Player
         {
             status = String.Format("{0} needs help!", name);
         }
-        else if (e.currentHp == 0)
+        else
         {
             status = String.Format("{0} is knocked out!", name);
         }

@@ -26,7 +26,6 @@ public class Player
         this.maxHp = maxHp;
         hp = maxHp;
         status = String.Format("{0} is ready to go!", name);
-
         HPCheck = CheckStatus;
     }
 
@@ -50,6 +49,7 @@ public class Player
             Console.WriteLine("{0} takes 0 damage!", name);
             return;
         }
+        Console.WriteLine("{0} takes {1} damage!", name, damage);
         if (damage > hp)
         {
             hp = 0;
@@ -58,7 +58,6 @@ public class Player
         {
             ValidateHP(hp - damage);
         }
-        Console.WriteLine("{0} takes {1} damage!", name, damage);
     }
 
     /// <summary> public void HealDamage </summary>
@@ -70,8 +69,8 @@ public class Player
             Console.WriteLine("{0} heals 0 HP!", name);
             return;
         }
-        ValidateHP(hp + heal);
         Console.WriteLine("{0} heals {1} HP!", name, heal);
+        ValidateHP(hp + heal);
     }
 
     /// <summary> public void HealDamage </summary>
@@ -124,24 +123,25 @@ public class Player
         {
             status = String.Format("{0} is in perfect health!", name);
         }
-        else if (e.currentHp >= maxHp / 2 && e.currentHp < maxHp)
+        else if (e.currentHp >= (maxHp / 2) && e.currentHp < maxHp)
         {
             status = String.Format("{0} is doing well!", name);
         }
-        else if (e.currentHp > maxHp / 4 && e.currentHp >= maxHp / 2 )
+        else if (e.currentHp >= (maxHp / 4) && e.currentHp > (maxHp / 2))
         {
             status = String.Format("{0}  isn't doing too great...", name);
         }
-        else if (e.currentHp > 0 && e.currentHp < maxHp / 4)
+        else if (e.currentHp > 0 && e.currentHp < (maxHp / 4))
         {
-            status = String.Format("{0}  isn't doing too great...", name);
+            status = String.Format("{0} needs help!", name);
         }
-        else
+        else if (e.currentHp == 0)
         {
             status = String.Format("{0} is knocked out!", name);
         }
         Console.WriteLine(status);
     }
+
 }
 
 /// <summary> public enum Modifier </summary>

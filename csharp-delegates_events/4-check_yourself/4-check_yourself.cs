@@ -77,7 +77,7 @@ public class Player
     /// <param name="newHp"></param>
     public void ValidateHP(float newHp)
     {
-        if (newHp < 0 )
+        if (newHp <= 0 )
         {
             newHp = 0;
         }
@@ -127,9 +127,9 @@ public class Player
         {
             status = String.Format("{0} is doing well!", name);
         }
-        else if (e.currentHp >= (maxHp / 4) && e.currentHp > (maxHp / 2))
+        else if (e.currentHp >= (maxHp / 4) && e.currentHp < (maxHp / 2))
         {
-            status = String.Format("{0}  isn't doing too great...", name);
+            status = String.Format("{0} isn't doing too great...", name);
         }
         else if (e.currentHp > 0 && e.currentHp < (maxHp / 4))
         {

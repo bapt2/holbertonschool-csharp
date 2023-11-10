@@ -48,7 +48,7 @@ public class Player
             return;
         }
 
-        Console.WriteLine("{0} has {1} damage!", name, damage);
+        Console.WriteLine("{0} takes {1} damage!", name, damage);
     }
 
     /// <summary> public void HealDamage </summary>
@@ -61,7 +61,7 @@ public class Player
             return;
         }
 
-        Console.WriteLine("{0} has {1} heal!", name, heal);
+        Console.WriteLine("{0} heals {1} HP!", name, heal);
     }
 
 }
